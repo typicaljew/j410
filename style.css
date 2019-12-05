@@ -206,9 +206,9 @@ background: url(pics/main2.jpg)
 
 .popout {
   font-family: Futura, sans-serif;
-  font-weight: 800;
-  font-size: 35px;
-  padding: 240px 50px 72px 5px;
+  font-weight: 900;
+  font-size: 35px !important;
+  padding: 340px 50px 72px 45px;
 }
     
     
@@ -218,7 +218,8 @@ background: url(pics/main2.jpg)
 /*-----styles for jquery dropdown menu-----*/
   .nav-list {
     display: block !important;
-  }
+  
+    }
 }
 
 #nav-toggle {
