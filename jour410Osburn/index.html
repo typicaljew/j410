@@ -1,0 +1,409 @@
+
+<!doctype html>
+
+<html>
+	
+<head>
+	<!--The following adds favicon images -- be sure to verify paths-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    
+    
+    <!-----java loader------>
+    
+    <style media="screen">
+        .loader{
+            position: fixed;
+            z-index: 99;
+            top:0;
+                left:0;
+            width: 100%;
+            height: 100%;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader > img{
+            width: 400px;
+        }
+        .loader.hidden{
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards
+        }
+        
+        @keyframes fadeOut{
+            100%{
+                opacity:0;
+                visibility: hidden;
+            }
+        }
+        
+        .thumb{
+            height: 100px;
+            border: 1px black;
+            margin: 10px
+        }
+    
+    
+    </style>
+    
+    
+
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>The Minority Report | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar dissapear on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+    
+<!--Favicon-->
+    <!--The following adds favicon images -- be sure to verify paths-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button class= "butt" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+<body>
+    
+    <!------ java loader----->
+    
+<div class="loader">
+    <img src="img/recycle.gif" alt="loading..."/>
+    
+    </div>
+    
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/favicon/android-chrome-192x192.png" width="65" height="65" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Surfrider SLO</a>
+        </li>
+	   <li>
+          <a href="#gal">Research</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Zero Waste Initiative</a>
+        </li>
+    
+      <li>
+          <a href="#num">Sustainability by the Numbers</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+	  <!--main image-->
+<div class="container">
+    <!--beginning of main image-->
+<img class="main2" src="img/main2.jpg" alt="description here">  
+    
+    
+    
+    <p class="popout">
+	<span>T</span>
+	<span>E</span>
+	<span>A</span>
+	<span>M</span><br>
+	<span>G</span>
+	<span>R</span>
+	<span>E</span>
+	<span>E</span>
+	<span>N</span>
+	
+	
+</p>
+    
+    
+    </div>
+
+  
+       
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Cal Poly and SLO locals are going green</h2>
+<article>
+<p class="tab">San Luis Obispo and the Cal Poly campus are moving towards more sustainable practices. Campus administrators, professors, students and SLO community members are all working towards reducing their negative impact on the environment. </p>
+<p class="tab"><a href="#gal">Surfrider SLO</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Surfrider SLO Does its Part</h2>
+    <article>
+        <p class= "tab"> Check out images from Surfrider SLO's 25th Annual Paddle for Clean Water</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="The San Luis Obispo (SLO) chapter of Surfrider, a national organization dedicated to protecting the coastline, spent the early morning hours of Saturday Oct.12 gearing up for their 25th annual Paddle for Clean Water event at Olde Port Beach in Avila. This event is of great significance to the local chapter, since it was this event that provided the seed money for Surfrider SLO 25 years ago. The event was first held for Ken Harmount, a former Morro Bay lifeguard, to pay for his medical bills after he became paralyzed in a snowboarding accident. Instead of using the money for himself, Harmount used it to start a local Surfrider chapter. “Our chapter was born out of Ken Harmount’s generosity,” said Brad Snook the Chairman of Surfrider’s SLO chapter."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Tom Reilly from Central Coast Kayaks held an early morning briefing for volunteers before the event. Reilly said he has been involved with Surf Rider since 2001 as the liaison between the Kayak shop and the local chapter. As a long-time volunteer, Reilly is passionate about Surf Rider and the Paddle for Clean Water event in particular. “The reason why I do it is I am a paddler,” said Reilly. “ I’m passionate about being on the water [and] helping people get on the water. This event is fun and it is a great way of bringing the paddling community together.” "/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Volunteer Marcia Frank registers the first few participants for that morning's event with a smile despite the early hour. To participate, paddlers paid a price of $40 for non-members and $30 for Surfrider members."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Around 8 am, cars hauling kayaks, surfboards, and paddleboards arrived in Avila. Participants chatted as they prepared to paddle. Paddlers ranged from novices to experts. Trampas Costello (not pictured), a long-time friend of Harmount, said he hadn’t used his kayak since last year's event."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="The event was supposed to have three different courses a 10-kilometer, a 5-kilometer and a much shorter children’s course. This year, however, no children participated, leaving just two events."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="This year had a light turn out, with around 15 paddlers. Reilly identified sluggish marketing as the reasoning and said he expects the event's participation to increase in the next few years. According to Snook, in previous years the event has had as many as 45 participants."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Surfrider volunteer John Capela was entrusted with timing the paddlers. He and Reilly patiently awaited the first returners for 45 minutes, using binoculars to keep tabs on participants as they paddled miles away from shore."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Costello was the first to return from the five-kilometer paddle. Though Costello identifies as a surfer, he decided to kayak for Saturday’s event. “I’m a reluctant paddler. I can surf but I know nothing about kayaking,” said Costello, “I’m a reluctant participant, but it’s a great cause, for Surfrider and it’s in Ken Harmount’s name, so that’s kinda why I do it.” Costello met Harmount in 1987, before Harmount's accident, when they lived at the same apartment complex. He said Harmount and him became good friends and that Harmount got him into surfing."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Snook was breathless and smiling as he returned to shore. He was greeted by Reilly who was waiting on the shore."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Matt Rodenberger was the first to arrive back to shore after completing the lengthy 10-kilometer course. With a time of an hour and 17 minutes, Rodenberger was not far behind those participating in the shorter race despite paddling double the distance."/>
+<img src="img/11.jpg" width="100%" height="100%" alt="Costello, Snook, and Tim and Sue Miers discussed the course moments after the Miers’ made it to shore. The four were the only participants in the 5-kilometer race. Costello, who has done the long course the past couple years, called the 5-kilometer a blast."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Research</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+    
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Sustainability Research at Cal Poly</h2>
+<article>
+  <p class="tab">Click on images to hear professors's discuss their research promoting sustainability. <br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/grevefinalaudio.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_2">
+    <source src="audio/Peter%20Schwartz%20final.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_3">
+	<source src="audio/braunfinalaudio.mp3" type="audio/mpeg" />
+</audio>
+            
+<img src="img/rollover/grevesgiffinal.gif" class="rollover" alt="description" onmouseover="this.src='img/rollover/actualportraitgreve.jpg'" onmouseout="this.src='img/rollover/grevesgiffinal.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/schwartzgiffinal.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/actualportraitschwartz.jpg'" onMouseOut="this.src='img/rollover/schwartzgiffinal.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/braungiffinal.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/actualportraitbraun.jpg'" onMouseOut="this.src='img/rollover/braungiffinal.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Zero Waste Initiative</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+    <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">Zero Waste Initiative</h2>
+<article>
+<p class="tab">Anastasia Nicole, the Program Coordinator for the Zero Waste Initiative at Cal Poly, explains obstacles to reducing waste on campus.</p>	
+<video width="100%" height="100%" poster="img/videostill.png" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Sustainability by the Numbers</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of new section-->
+<div class="row whiteBG">
+<h2 id="num">Sustainability by the Numbers</h2>
+<article>
+<p class="tab">The Cal Poly campus is going green. Here are some key indicators that the campus is becoming more environmentally conscious.</p>
+<div class="infogram-embed" data-id="c6c56510-7456-4da7-88e2-2571c59da46c" data-type="interactive" data-title="Onboarding Infographic"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/c6c56510-7456-4da7-88e2-2571c59da46c" style="color:#989898!important;text-decoration:none!important;" target="_blank">Onboarding Infographic</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+</article>
+</div>
+<!--end of new section-->
+	
+<!--beginning of footer-->
+<footer>TeamGREEN| San Luis Obispo, CA | <a href="mailto: kylaosburn14@gmail.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2019 | Site by Kyla Osburn 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+<!-----loader java------->
+<script type="text/javascript">
+window.addEventListener("load", function(){
+    
+    const loader=document.querySelector(".loader");
+    console.log(loader);
+    loader.className += " hidden";// class "loader hidden"
+});
+
+</script>
+
+</html>
